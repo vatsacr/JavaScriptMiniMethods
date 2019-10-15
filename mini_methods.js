@@ -32,3 +32,17 @@ var reverse = function(x) {
     }
     
 };
+
+/**Accepts both strings and array of strings and returns an object whose key is the character and the value is the number of times the key has been repeated in the string or array of strings
+ * @param {str[] or string} str
+ * @return {Object}
+*/
+var findRepeatedStrings = function(str){
+    repeatedObject = {};
+    sampleString = '';
+    typeof(str)== Array ?sampleString = str.join(""):sampleString = str;
+    for(var i=0;i<str.length;i++){
+    repeatedObject[str[i]] = sampleString.split(str[i]).length-1;
+    }
+    return repeatedObject;
+};
