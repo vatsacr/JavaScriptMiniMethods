@@ -46,3 +46,11 @@ var findRepeatedStrings = function(str){
     }
     return repeatedObject;
 };
+
+/** Accepts tow strings and returnds the index of the second string in the first string else returns -1
+ * @param {haystack,needle} string
+ * @return {Number}
+*/
+var findNeedle = function(haystack,needle){
+    return needle?haystack.indexOf(needle):0;
+}
