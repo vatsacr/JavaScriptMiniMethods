@@ -54,3 +54,22 @@ var findRepeatedStrings = function(str){
 var findNeedle = function(haystack,needle){
     return needle?haystack.indexOf(needle):0;
 }
+
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var moveZeroes = function(nums) {
+    var count = 0;
+    var incrementer = 0;
+    var length = nums.length;
+    while(incrementer<length){
+        if(nums[incrementer] === 0){
+            nums.splice(incrementer,1);
+            nums.push(0);
+            length--;
+        } else {
+            incrementer++;
+        }
+    }
+};
