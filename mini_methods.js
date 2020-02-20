@@ -73,3 +73,28 @@ var moveZeroes = function(nums) {
         }
     }
 };
+
+/**
+ * @param {String} str
+ * @return {number} Return the least lenngth to contain all the characters
+ */
+var smallestString=function(str){
+    var set2 = new Set(str);
+    var uniqueArr = [...set2];
+    var mainArr = str.split('');
+    var uniqueStr = [...set2].join('');
+    var resultArray = [];
+    var counter= set2.size;
+    for(var i=0;i<mainArr.length;i++){
+        resultArray.push(mainArr[i]);
+        for(var j=0;j<uniqueArr.length;j++){
+            if(resultArray[i] == uniqueArr[j]){
+                counter--;
+                uniqueArr.splice(j,1);
+                if(counter===0){
+                    return resultArray.length;
+                }
+            }
+        }
+    }
+}
